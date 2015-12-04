@@ -50,6 +50,7 @@ public class audHelper {
 		manager.doc.btnSend.click();
 		Element.sl(2);
 		user.orderNumber = wd.findElement(By.xpath(".//div[3]/div[2]")).getText();
+		System.out.println("order # "+user.orderNumber);
 		manager.cabPred.btnReloadStatus.click();
 		manager.cabPred.btnExit.click();
 	}

@@ -74,7 +74,7 @@ public class AudBid {
 	public AudBid checkAll() {
 		lnkAudRabDoc.click();
 		double d=Element.t;
-		Element.t=0.05;		
+		Element.t=0.04;		
 		String[] chk = { "010303", "020304", "030204", "040304", "050304", "060305", "070403", "080202", "090306", "101500", "110306", "120306", "130506", "140605", "150205", "160202", "170503"};
 		for(String i : chk) {
 			String i1=i.substring(0, 2);

@@ -19,13 +19,14 @@ public class TestDeal extends TestBase {
 
 	@Test
 	public void makeDeal() throws Exception {
+		//System.out.println("1");
 		whatToDo();
 		app.landPred.open().btnVhodClick().login(Pred1).btnReloadStatus.click();
 		assertTrue("Некорректный статус", app.cabPred.verifyStatus(Constants.statusNaProverke));
 		app.cabPred.btnExit.click();
 		app.landAud.open().btnVhodClick().login(Aud1);
 		app.list.chooseBid(Pred1).downloadOrder().makeZakl(Mark.notBad,"notbad1","notbad2").checkAll().btnSendOrder.click();
-		Element.sl(40);
+		Element.sl(50);
 		app.audbid.btnExit.click();
 		System.out.println(Pred1.orderNumber);
 		app.admin.open().login().ordOpen().chooseAndAccept(Pred1).btnExit.click();
@@ -36,8 +37,9 @@ public class TestDeal extends TestBase {
 		assertTrue("Некорректный статус", app.cabPred.verifyStatus(Constants.statusNaDorab));
 		app.cabPred.btnExit.click();
 		app.landAud.open().btnVhodClick().login(Aud1).chooseCurrent().makeZakl(Mark.notBad,"notbad1000","notbad2000").btnSendOrder.click();
-		Element.sl(40);
+		Element.sl(50);
 		app.audbid.btnExit.click();
+		System.out.println(Pred1.orderNumber);
 		app.admin.open().login().ordOpen().chooseAndAccept(Pred1).btnExit.click();
 		app.landPred.open().btnVhodClick().login(Pred1);
 		Element.sl(1);
